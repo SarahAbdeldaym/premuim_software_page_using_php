@@ -15,6 +15,8 @@ body {
 }
 
 h2 {
+  margin-left: 20px;
+  display: flex;
   text-align: center;
   color: #42356d;
 }
@@ -28,9 +30,11 @@ img {
 }
 
 .login-form {
+  display: flex;
+  flex-direction: column;
   background-color: #fcf5e6;
   width: 25%;
-  height: 485px;
+  height: 700px;
   position: relative;
   left: 60%;
   top: -127px;
@@ -39,13 +43,15 @@ img {
 }
 
 .form-style {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 500px;
   position: relative;
-  top: 13%;
+  top: 3%;
 }
 
 input {
+  display: flex;
   padding-left: 25px;
   font-size: medium;
   width: 91%;
@@ -79,6 +85,7 @@ input {
 }
 
 .btn-login {
+  display: flex;
   background-color: #5297c0;
   font-weight: 700;
   color: aliceblue;
@@ -86,10 +93,13 @@ input {
 }
 
 .pay-btn {
-  width: 54%;
+  display: flex;
+  width: 140px;
   background-color: #ffbe3a;
   font-size: 18px;
   font-weight: 600;
+  text-align: center;
+  margin-left: 35%;
 }
 
 #visa {
@@ -100,13 +110,6 @@ input {
   left: 5%;
 }
 
-.login-form {
-  height: 596px;
-}
-.form-style {
-  position: relative;
-  top: 8%;
-}
 p {
   padding-left: 20%;
 }
@@ -119,10 +122,19 @@ p {
 h1 {
   display: flex;
   position: absolute;
-  width:100vw;
+  width: 100vw;
   justify-content: center;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: #fff2d5;
   font-size: 50px;
+}
 
+.register_validation_errors {
+  display: flex;
+  font-size: 18px;
+  color: red;
+  margin-left: 20px;
+  font-weight: 600;
+  justify-content:center;
 }

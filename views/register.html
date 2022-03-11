@@ -18,17 +18,9 @@
       <div class="login-form">
         <form class="form-style" action="register.php" method="post">
           <h2>Register & Get it now!</h2>
-          <input
-            type="text"
-            placeholder="Enter username"
-            name="username"
-          />
-          <input type="text" placeholder="Enter email" name="email"/>
-          <input
-            type="text"
-            placeholder="Name on card"
-            name="cardName"
-          />
+          <input type="text" placeholder="Enter username" name="username" />
+          <input type="text" placeholder="Enter email" name="email" />
+          <input type="text" placeholder="Name on card" name="cardName" />
           <input
             type="text"
             placeholder="Enter card number"
@@ -41,20 +33,30 @@
               placeholder="Expiration (mm/yy)"
               name="username"
             />
-            <input id="sec" type="text" placeholder="CVV"/>
+            <input id="sec" type="text" placeholder="CVV" />
           </div>
 
-          <input type="password" placeholder="Enter password" name="password"/>
-          <input type="password" placeholder="Confirm password" name="password_confirm"/>
-          <input class="pay-btn" type="submit" value="Purchase" /><img
-            id="visa"
-            src="views/Resources/visa.png"
-            alt="visa logo"
-          /><br /><br />
+          <input type="password" placeholder="Enter password" name="password" />
+          <input
+            type="password"
+            placeholder="Confirm password"
+            name="password_confirm"
+          />
+          <input
+            class="pay-btn"
+            type="submit"
+            value="Purchase"
+            name="submit"
+          />
           <p>
             Already have an account?
             <a href="#"><strong>Login instead</strong></a>
           </p>
+
+          <?php
+            foreach ($register_validation_errors_arr as $error) {
+            echo "<div class=\"register_validation_errors\" div> $error </div>\n";
+          };?>
         </form>
       </div>
     </div>

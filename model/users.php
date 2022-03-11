@@ -2,7 +2,6 @@
 
 class users{
 
-
 public Database $database;
    public $table;
 
@@ -10,4 +9,6 @@ public Database $database;
         $this->database=new Database();
         $this->table=$this->database->Table("users");
     }
+
+
 }

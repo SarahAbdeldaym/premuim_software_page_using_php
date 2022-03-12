@@ -2,7 +2,7 @@
 
 class users{
 
-public Database $database;
+//public Database $database;
    public $table;
 
    public function __construct() {

@@ -6,3 +6,6 @@ define("_database_", "php_project_os42");
 define("_username_", "root");
 define("_password_", "");
 define("_max_username_length_", 50);
+define("_max_cardNumber_length_", 16);
+define("_max_CVV_length_", 3);
+define("_max_password_length_", 8);

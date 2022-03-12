@@ -3,7 +3,8 @@
   "description": "simple project",
   "license": "MIT",
   "require": {
-    "illuminate/database": "*"
+    "illuminate/database": "*",
+    "sentry/sdk": "^3.1"
   },
   "autoload": {
     "classmap": [

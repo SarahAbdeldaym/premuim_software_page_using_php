@@ -1,7 +1,7 @@
 <?php
 $register_validation_errors_arr = [];
 
-require_once("views/register.html");
+require_once("views/register.php");
 
 if (isset($_POST["submit"])) {
 

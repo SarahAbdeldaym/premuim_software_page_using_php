@@ -17,8 +17,8 @@ class Database{
         $capsule->bootEloquent();
     }
     
-    static function Table($table){
-        Capsule::table($table);
+    public function Table($table){
+        return Capsule::table($table);
       }
 
 }

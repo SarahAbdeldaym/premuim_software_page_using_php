@@ -15,12 +15,12 @@ if(isset($_POST["login"])){
    }
 
 
-if(isset($_POST["submit"])){
+// if(isset($_POST["submit"])){
 
    
-    $result=$check->register_insert($_POST['email'],$_POST['password']);
-    echo "<br>Result: ".$result;
-   }
-require_once("views/login.php");
+//     $result=$check->register_insert($_POST['email'],$_POST['password']);
+//     echo "<br>Result: ".$result;
+//    }
+require_once("views/profile.html");
 // require_once("views/register.php");
 ?>

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-class Database{
 
-    function __construct()
-    {
+class Database {
+
+    function __construct() {
         $capsule = new Capsule();
         $capsule->addConnection([
             "driver" => _driver_,
@@ -16,9 +16,8 @@ class Database{
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
     }
-    
-    static function Table($table){
-        Capsule::table($table);
-      }
 
+    public function Table($table) {
+        return Capsule::table($table);
+    }
 }

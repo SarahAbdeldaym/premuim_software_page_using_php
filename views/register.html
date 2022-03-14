@@ -18,29 +18,32 @@
       <div class="login-form">
         <form class="form-style" action="register.php" method="post">
           <h2>Register & Get it now!</h2>
-          <input type="text" placeholder="Enter username" name="username" />
-          <input type="text" placeholder="Enter email" name="email" />
-          <input type="text" placeholder="Name on card" name="cardName" />
+          <input type="text" placeholder="Enter username" name="username" value="<?php echo isset($_POST["username"]) ? ($_POST["username"]) : ""; ?>"/>
+          <input type="text" placeholder="Enter email" name="email" value="<?php echo isset($_POST["email"]) ? ($_POST["email"]) : ""; ?>"/>
+          <input type="text" placeholder="Name on card" name="cardName" value="<?php echo isset($_POST["cardName"]) ? ($_POST["cardName"]) : ""; ?>"/>
           <input
-            type="number"
+            type="text"
             placeholder="Enter card number"
             name="cardNumber"
+            value="<?php echo isset($_POST["cardNumber"]) ? ($_POST["cardNumber"]) : ""; ?>"
           />
           <div id="div1">
             <input
               id="ex"
               type="text"
               placeholder="Expiration (mm/yy)"
-              name="username"
+              name="expirationDate"
+              value="<?php echo isset($_POST["expirationDate"]) ? ($_POST["expirationDate"]) : ""; ?>"
             />
-            <input id="sec" type="text" placeholder="CVV" />
+            <input id="sec" type="text" placeholder="CVV" name ="cvv" value="<?php echo isset($_POST["cvv"]) ? ($_POST["cvv"]) : ""; ?>"/>
           </div>
 
-          <input type="password" placeholder="Enter password" name="password" />
+          <input type="password" placeholder="Enter password" name="password" value="<?php echo isset($_POST["password"]) ? ($_POST["password"]) : ""; ?>"/>
           <input
             type="password"
             placeholder="Confirm password"
-            name="password_confirm"
+            name="passwordConfirm"
+            value="<?php echo isset($_POST["passwordConfirm"]) ? ($_POST["passwordConfirm"]) : ""; ?>"
           />
           <input
             class="pay-btn"

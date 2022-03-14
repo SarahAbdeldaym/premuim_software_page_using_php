@@ -29,9 +29,9 @@ class Users {
     }
     public function is_registered($email) {
         $registered = $this->table->where("user_email", $email)->first();
-        if(isset($registered)){
+        if (isset($registered)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

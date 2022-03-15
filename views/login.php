@@ -3,9 +3,31 @@
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to home page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+/*if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: home.php");
     exit;
+}*/
+
+if(!empty($_POST["login"])) {
+	$conn = mysqli_connect(_host_, _username_, _password_, _database_);
+	$sql = "Select * from users where user_email = '" . $_POST["email"] . "' and passowrd = '" . sha1($_POST["password"]) . "'";
+	$result = mysqli_query($conn,$sql);
+	$user = mysqli_fetch_array($result);
+	if($user) {
+			$_SESSION["user_id"]= $user["user_id"];
+			
+			if(!empty($_POST["remember"])) {
+				setcookie ("user_login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
+				setcookie ("passowrd",$_POST["passowrd"],time()+ (10 * 365 * 24 * 60 * 60));
+			} else {
+				if(isset($_COOKIE["user_login"])) {
+					setcookie ("user_login","");
+				}
+				if(isset($_COOKIE["passowrd"])) {
+					setcookie ("passowrd","");
+				}
+			}
+	} 
 }
  
 ?>
@@ -45,18 +67,24 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
        </div>
 
         <div class="login-form">
-       
+            
+        <?php if(empty($_SESSION["user_id"])) { ?>
+
             <form class="form-style" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                 <h2>Login</h2>
-                <input type="text" placeholder="Enter your email" name="email" required>
-                <input type="password" placeholder="Enter your password" name="password" required><br>
-                <input id="rem-me" type="checkbox" value="Remember me" name="remember-me">
+                <input type="text" placeholder="Enter your email" name="email"  value="<?php if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; } ?>" required>
+                <input type="password" placeholder="Enter your password" name="password" value="<?php if(isset($_COOKIE["passowrd"])) { echo $_COOKIE["passowrd"]; } ?>" required><br>
+                <input id="rem-me" type="checkbox" value="Remember me" name="remember-me" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?>>
                 <label for="rem-me">Remember me</label><br>
                 <input class="btn-login" type="submit" name="login" value="Login"><br><br>
                 
             
                 <a href="#">Create new account?</a>
             </form>
+            <?php } else { ?>
+                You already have logged in. <a href="views/logout.php">Logout</a>
+
+            <?php } ?>
         </div>
 
        

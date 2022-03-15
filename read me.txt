@@ -1,2 +1,0 @@
-insert into users ( `user_email`, `passowrd`) VALUES
-('your_name@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');//this is the encryption of pass is 12345 

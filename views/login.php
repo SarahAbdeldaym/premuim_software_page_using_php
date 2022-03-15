@@ -3,7 +3,7 @@
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to home page
-/*if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+/*if(isset($_SESSION["login"]) && $_SESSION["login"] === true){
     header("location: home.php");
     exit;
 }*/
@@ -16,15 +16,15 @@ if(!empty($_POST["login"])) {
 	if($user) {
 			$_SESSION["user_id"]= $user["user_id"];
 			
-			if(!empty($_POST["remember"])) {
+			if(!empty($_POST["remember-me"])) {
 				setcookie ("user_login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
-				setcookie ("passowrd",$_POST["passowrd"],time()+ (10 * 365 * 24 * 60 * 60));
+				setcookie ("password",$_POST["password"],time()+ (10 * 365 * 24 * 60 * 60));
 			} else {
 				if(isset($_COOKIE["user_login"])) {
 					setcookie ("user_login","");
 				}
-				if(isset($_COOKIE["passowrd"])) {
-					setcookie ("passowrd","");
+				if(isset($_COOKIE["password"])) {
+					setcookie ("password","");
 				}
 			}
 	} 
@@ -68,12 +68,11 @@ if(!empty($_POST["login"])) {
 
         <div class="login-form">
             
-        <?php if(empty($_SESSION["user_id"])) { ?>
 
             <form class="form-style" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                 <h2>Login</h2>
                 <input type="text" placeholder="Enter your email" name="email"  value="<?php if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; } ?>" required>
-                <input type="password" placeholder="Enter your password" name="password" value="<?php if(isset($_COOKIE["passowrd"])) { echo $_COOKIE["passowrd"]; } ?>" required><br>
+                <input type="password" placeholder="Enter your password" name="password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" required><br>
                 <input id="rem-me" type="checkbox" value="Remember me" name="remember-me" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?>>
                 <label for="rem-me">Remember me</label><br>
                 <input class="btn-login" type="submit" name="login" value="Login"><br><br>
@@ -81,10 +80,7 @@ if(!empty($_POST["login"])) {
             
                 <a href="#">Create new account?</a>
             </form>
-            <?php } else { ?>
-                You already have logged in. <a href="views/logout.php">Logout</a>
-
-            <?php } ?>
+           
         </div>
 
        

@@ -5,7 +5,7 @@ declare(strict_types=1);
 use chillerlan\QRCode\QRCode;
 use chillerlan\QRCode\QROptions;
 
-require_once('vendor/autoload.php');
+// require_once('vendor/autoload.php');
 
 $options = new QROptions(
   [

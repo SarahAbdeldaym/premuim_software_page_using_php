@@ -11,27 +11,51 @@ class Login{
        $this->database = new Database;
        $this->table = $this->database->Table('users');
     }
+
+
+
+
+    // check if user exist in db or not
     public function checkData($useremail,$pass){
 
-        $errors="";
         $validemail=$this->table->where('user_email',"=",$useremail)->exists();
-        echo "Email:  ".$validemail;
-        $hashpassword=sha1($pass);
-        $validepassword=$this->table->where('passowrd',"=",$hashpassword)->exists();
+        // $hashpassword=sha1($pass);
+        // $validepassword=$this->table->where('passowrd',"=",$hashpassword)->exists();
         
-        // $validepassword=$this->table->where('passowrd','=',$pass)->exists();
-        echo "<br>Password:   ".$validepassword;
+        $validepassword=$this->table->where('passowrd','=',$pass)->exists();
         if($validemail && $validepassword){
-           $errors.="Data is founded in user table";
+          return true;
           
         }
         else{
-            $errors.="There is something wrong in email or password or both";
+           return false;
             
         }
-        return $errors;
         
     }
+
+
+
+    // fn to get specific user id
+    public function get_userId($email){
+        $cur_user= $this->table->where("user_email",$email)->get();
+        
+        return $cur_user[0]->user_id;
+     }
+    // To generate Token random str
+    public function generateRandomString() {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+      
+        for ($i = 0; $i < 127; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $randomString .= $characters[$index];
+        }
+    return $randomString;
+    }
+
+
+    
    
 }
 

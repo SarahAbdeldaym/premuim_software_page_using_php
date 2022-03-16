@@ -39,3 +39,8 @@ select * from users;
 select * from tokens;
 select * from products;
 select * from orders;
+
+
+alter table users add token_id  ;
+
+alter table users add   FOREIGN KEY (token_id) REFERENCES tokens(token_id);

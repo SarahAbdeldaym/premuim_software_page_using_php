@@ -8,26 +8,38 @@ session_start();
     exit;
 }*/
 
+$result= new Login;
+    
+
 if(!empty($_POST["login"])) {
-	$conn = mysqli_connect(_host_, _username_, _password_, _database_);
-	$sql = "Select * from users where user_email = '" . $_POST["email"] . "' and passowrd = '" . sha1($_POST["password"]) . "'";
-	$result = mysqli_query($conn,$sql);
-	$user = mysqli_fetch_array($result);
+
+
+   $user= $result->checkData($_POST['email'],$_POST['password']);
+    if($result){
+       $user_id=$result->get_userid($_POST['email']);
+      // echo $user_id;
+    }
+    $remember_me_token = $result->generateRandomString(); 
+
+
 	if($user) {
-			$_SESSION["user_id"]= $user["user_id"];
-			
+			$_SESSION["user_id"]= $user_id;
+
 			if(!empty($_POST["remember-me"])) {
-				setcookie ("user_login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
-				setcookie ("password",$_POST["password"],time()+ (10 * 365 * 24 * 60 * 60));
+				setcookie ("user_email",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
+				setcookie ("password",sha1($_POST["password"]),time()+ (10 * 365 * 24 * 60 * 60));
+                setcookie ("remember_me_token",$remember_me_token,time()+ (10 * 365 * 24 * 60 * 60));
+
 			} else {
-				if(isset($_COOKIE["user_login"])) {
-					setcookie ("user_login","");
+				if(isset($_COOKIE["user_email"])) {
+					setcookie ("user_email","");
 				}
 				if(isset($_COOKIE["password"])) {
 					setcookie ("password","");
 				}
 			}
-	} 
+	}
+   
 }
  
 ?>
@@ -71,9 +83,9 @@ if(!empty($_POST["login"])) {
 
             <form class="form-style" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                 <h2>Login</h2>
-                <input type="text" placeholder="Enter your email" name="email"  value="<?php if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; } ?>" required>
+                <input type="text" placeholder="Enter your email" name="email"  value="<?php if(isset($_COOKIE["user_email"])) { echo $_COOKIE["user_email"]; } ?>" required>
                 <input type="password" placeholder="Enter your password" name="password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" required><br>
-                <input id="rem-me" type="checkbox" value="Remember me" name="remember-me" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?>>
+                <input id="rem-me" type="checkbox" value="Remember me" name="remember-me" <?php if(isset($_COOKIE["user_email"])) { ?> checked <?php } ?>>
                 <label for="rem-me">Remember me</label><br>
                 <input class="btn-login" type="submit" name="login" value="Login"><br><br>
                 

@@ -3,7 +3,6 @@
 require_once("vendor/autoload.php");
 
 $register_validation_errors_arr = [];
-$register_user = new Users;
 
 if (isset($_POST["submit"])) {
 
@@ -19,11 +18,7 @@ if (isset($_POST["submit"])) {
         $validated = false;
     } else {
 
-<<<<<<< HEAD
-        if (!(strlen(trim($_POST["username"])) < _max_username_length_)) {
-=======
-        if (!(strlen(trim($POST["username"])) < _max_username_length)) {
->>>>>>> 0f4191f06a951fec6f4daa0f0369e84e26ab9641
+        if ((strlen(trim($_POST["username"])) > _max_username_length_)) {
             array_push($register_validation_errors_arr, "Name is not valid!");
             $validated = false;
         }
@@ -33,11 +28,7 @@ if (isset($_POST["submit"])) {
             $validated = false;
         }
 
-<<<<<<< HEAD
         if (!(trim(preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/", $_POST["password"])))) {
-=======
-        if (!(trim(preg_match("/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/", $_POST["password"])))) {
->>>>>>> 0f4191f06a951fec6f4daa0f0369e84e26ab9641
             array_push($register_validation_errors_arr, "Password must be Minimum eight characters,
             at least one uppercase letter, one lowercase letter and one number.");
             $validated = false;
@@ -79,6 +70,7 @@ if (isset($_POST["submit"])) {
         $register_user->register_insert($_POST["username"], $_POST["email"], $_POST["password"]);
         header('Location: views/login.html');
     }
+    
 }
 
 require_once("views/register.html");

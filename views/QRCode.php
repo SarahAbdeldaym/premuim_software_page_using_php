@@ -15,7 +15,7 @@ $options = new QROptions(
   ]
 );
 
-$qrcode = (new QRCode($options))->render('http://localhost/PHP-project/index.php');
+$qrcode = (new QRCode($options))->render('/index.php');
 ?>
 <!DOCTYPE html>
 <html>

@@ -7,6 +7,7 @@ class Users {
 
     public function __construct() {
         $this->database = new Database();
+        $this->table = $this->database->Table("users");
     }
 
     public function register_insert($username, $email, $pass) {
@@ -27,7 +28,7 @@ class Users {
         return $error;
     }
     public function is_registered($email) {
-        $registered = $this->database->Table("users")->where("user_email", $email)->first();
+        $registered = $this->table->where("user_email", $email)->first();
         if (isset($registered)) {
             return true;
         } else {

@@ -7,7 +7,26 @@ class Orders {
 
     public function __construct() {
         $this->database = new Database();
-        $this->table = $this->database->Table("Orders");
+        $this->table = $this->database->Table("orders");
+    }
+
+    public function order_insert($order_date, $download_count, $download_key, $user_id, $product_id) {
+        $error = "";
+        $check = $this->table->insert(
+            [
+                'order_date' => $order_date,
+                'download_count' => $download_count,
+                'download_key' => $download_key,
+                'user_id' => $user_id,
+                'product_id' => $product_id,
+            ]
+        );
+        if ($check) {
+            $error = "User data is inserted";
+        } else {
+            $error = "User data is not inserted";
+        }
+        return $error;
     }
 
     public function is_current_key($key) {

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'efd9e2bdda6c3334efb16c7a0afffd21826e569c',
         'name' => 'vendor/project',
         'dev' => true,
     ),
@@ -218,12 +218,12 @@
             ),
         ),
         'vendor/project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'efd9e2bdda6c3334efb16c7a0afffd21826e569c',
             'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(

@@ -1,10 +1,13 @@
 <?php
-$filename = 'XYZsoftware.zip'; // of course find the exact filename....
+require_once("vendor/autoload.php");
+
+//file download code block
+$filename = 'XYZsoftware.zip';
 
 header('Pragma: public');
 header('Expires: 0');
 header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-header('Cache-Control: private', false); // required for certain browsers 
+header('Cache-Control: private', false); 
 header('Content-Type: application/zip');
 
 header('Content-Disposition: attachment; filename="' . basename($filename) . '";');
@@ -12,4 +15,5 @@ header('Content-Transfer-Encoding: binary');
 header('Content-Length: ' . filesize($filename));
 
 readfile($filename);
+
 exit;

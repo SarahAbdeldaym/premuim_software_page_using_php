@@ -1,6 +1,14 @@
 <?php
-
+$download_limit_error = "";
 require_once("vendor/autoload.php");
 
+$download_order = new Orders;
 
-require_once("views/download.html");
+if(isset($_GET['key']) && $download_order->is_current_key($_GET['key'])){
+    require_once("views/download.html");
+}else{
+    require_once("views/error.html");
+}
+
+// if ($download_order->get_count("") > 7) { //$_post["id"]  to be fixed 
+

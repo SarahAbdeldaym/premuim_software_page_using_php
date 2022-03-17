@@ -1,10 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="views/Styles/download.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -15,9 +17,20 @@
         <div class="details">
             <h3>Name: XYZ software</h3>
             <h3>Size: 150Mb</h3>
-            <button id="download" onclick="window.location.href='download_initiator.php'">Software.zip</button>
+            <a href='
+            <?php
+            if (false){ //$download_order->get_count("$_post["id"]")<8 condition to be added
+                echo("download_initiator.php");
+            }else{
+                $download_limit_error = "you have reached your maximum downloads number";
+            }
+            ?>
+            '>Software.zip</a>
         </div>
-        
+        <?php
+        echo "<div class=\"download_limit_error\" div> $download_limit_error </div>\n";
+    ?>
     </div>
 </body>
+
 </html>

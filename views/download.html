@@ -1,7 +1,7 @@
 <?php
     $hrefPath = '';
     if ($download_order->get_count('1')<8){ //('$_post['id']') to be added
-        $hrefPath = 'download_limit_handler.php';
+        $hrefPath = 'helpers/download_limit_handler.php';
     }else{
         $download_limit_error = 'you have reached your maximum downloads number';
     }
@@ -28,7 +28,7 @@
             <?php if (!empty($hrefPath)) { ?>
                 <a
                     id="download_link"
-                    onclick = "window.open('http://localhost/project/download_initiator.php');"  
+                    onclick = "window.open('http://localhost/project/helpers/download_initiator.php');"  
                     href="<?= $hrefPath ?>"
                 >
                     Software.zip

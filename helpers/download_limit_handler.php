@@ -1,5 +1,5 @@
 <?php
-require_once("vendor/autoload.php");
+require_once("../vendor/autoload.php");
 
 $download_order = new Orders;
 
@@ -15,6 +15,6 @@ if ($download_order->get_count("1") <= 7) { //("$_post["id"]") to be added
     $download_order->order_insert($order_date, $new_download_count, $new_key, $user_id, $product_id);
 
     // redirecting the user to the new link
-    $new_url = "download.php?key=$new_key";
+    $new_url = "../download.php?key=$new_key";
     header("Location: $new_url");
 }

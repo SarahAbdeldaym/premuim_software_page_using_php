@@ -35,4 +35,22 @@ class Users {
             return false;
         }
     }
+
+    // check if user exists in db
+    public function is_valid_user($email, $hashed_password) {
+        $valid_email = $this->table->where('user_email', "=", $email)->exists();
+        $valid_password = $this->table->where('password', "=", $hashed_password)->exists();
+        if ($valid_email && $valid_password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // fn to get specific user id
+    public function get_userId($email) {
+        $cur_user = $this->table->where("user_email", $email)->get();
+
+        return $cur_user[0]->user_id;
+    }
 }

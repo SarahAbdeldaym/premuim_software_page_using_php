@@ -6,103 +6,65 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #fff2d5;
-  height: 750px;
 }
-
 .imageback {
   width: 100%;
-  height: 30%;
+  height: 300px;
   background-color: #42356d;
 }
-
 h2 {
-  margin-left: 20px;
-  display: flex;
   text-align: center;
   color: #42356d;
 }
-
 img {
   width: 40%;
   height: auto;
   position: relative;
-  top: 218px;
+  top: 320px;
   left: 16%;
 }
-
 .login-form {
-  display: flex;
-  flex-direction: column;
   background-color: #fcf5e6;
   width: 25%;
-  height: 700px;
+  height: 485px;
   position: relative;
   left: 60%;
-  top: -100px;
+  top: -127px;
   border-radius: 11px;
   box-shadow: 10px 19px 15px darkgrey;
 }
-
 .form-style {
-  display: block;
   width: 100%;
-  height: 500px;
+  height: auto;
   position: relative;
-  top: 3%;
+  top: 13%;
 }
-
 input {
-  display: flex;
   padding-left: 25px;
   font-size: medium;
-  width: 91%;
+  width: 84%;
   height: 42px;
   border-radius: 6px;
   border: 0.3px solid gray;
   margin-left: 20px;
   margin-top: 10px;
 }
-
-#div1 {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0px;
-  font-size: medium;
-  width: 91%;
-  height: 42px;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-#ex {
-  width: 50%;
-  margin-left: 0px;
-  margin-top: 0px;
-}
-#sec {
-  width: 34%;
-  margin-left: 10px;
-  margin-top: 0px;
-}
-
 .btn-login {
-  display: flex;
+  font-size: 22px;
   background-color: #5297c0;
   font-weight: 700;
   color: aliceblue;
   text-align: center;
 }
-
+a {
+  padding-left: 0%;
+}
 .pay-btn {
-  display: flex;
-  width: 140px;
+  width: 54%;
   background-color: #ffbe3a;
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
-  margin-left: 35%;
 }
-
 #visa {
   width: 79px;
   height: 55px;
@@ -110,31 +72,37 @@ input {
   top: 21px;
   left: 5%;
 }
-
-p {
-  padding-left: 20%;
+.danger {
+  background-color: red;
+  width: 100%;
+  height: 20px;
 }
-
-#register {
-  width: 31%;
+b {
+  margin-left: 25px;
+}
+#rem-me {
+  width: 20px;
   height: auto;
 }
-
-h1 {
-  display: flex;
-  position: absolute;
-  width: 100vw;
-  justify-content: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  color: #fff2d5;
-  font-size: 50px;
-}
-
-.register_validation_errors {
-  display: flex;
-  font-size: 18px;
+span {
+  padding-left: 41px;
   color: red;
-  margin-left: 20px;
-  font-weight: 600;
 }
+
+.login_validation {
+  display: flex;
+  font-size: 16px;
+  color: red;
+  margin-left: 25px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+} */

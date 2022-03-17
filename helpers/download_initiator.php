@@ -1,6 +1,4 @@
 <?php
-require_once("vendor/autoload.php");
-
 //file download code block
 $filename = 'XYZsoftware.zip';
 

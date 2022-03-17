@@ -42,6 +42,11 @@
         <p>4</p>
         <span> Download Count</span>
       </div>
+      
+      <?php
+      foreach ($register_validation_errors_arr as $error) {
+      echo "<div class=\"register_validation_errors\" div> $error </div>\n";
+    };?>
     </div>
   </body>
 </html>

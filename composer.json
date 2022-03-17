@@ -3,8 +3,9 @@
   "description": "simple project",
   "license": "MIT",
   "require": {
-    "illuminate/database": "*"
-  },
+    "illuminate/database": "*",
+    "chillerlan/php-qrcode": "*"
+    },
   "autoload": {
     "classmap": [
       "model"

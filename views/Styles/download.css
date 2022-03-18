@@ -9,9 +9,15 @@ body {
 }
 
 header {
+<<<<<<< HEAD
   width: 100%;
   height: 300px;
   background-color: #42356d;
+=======
+    width: 100%;
+    height: 300px;
+    background-color: #42356d;
+>>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
 }
 
 nav {
@@ -22,6 +28,7 @@ nav {
 }
 
 #logout {
+<<<<<<< HEAD
   width: 90px;
   height: 42px;
   font-size: 15px;
@@ -30,6 +37,16 @@ nav {
   border-radius: 8px;
   background-color: #ff6c6c;
   color: aliceblue;
+=======
+    width: 90px;
+    height: 42px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6c6c;
+    color: aliceblue;
+>>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
 }
 
 #prod-img {
@@ -37,6 +54,7 @@ nav {
 }
 
 .product {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +78,31 @@ nav {
   align-items: center;
   height: auto;
   position: relative;
+=======
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    background-color: #fcf5e6;
+    box-shadow: 10px 19px 15px darkgrey;
+    position: absolute;
+    left: 35%;
+    top: 16%;
+    border-radius: 8px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+>>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
 }
 
 #download {
@@ -74,6 +117,7 @@ nav {
 }
 
 .download_limit_error {
+<<<<<<< HEAD
   display: flex;
   text-align: center;
   font-size: 18px;
@@ -130,3 +174,60 @@ a {
   background-color: #202a8b;
   color: aliceblue;
 }
+=======
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: red;
+    font-weight: 600;
+}
+
+a {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#logo {
+    position: absolute;
+    top: 30px;
+    left: 38%;
+}
+
+.user_email {
+    font-size: 20px;
+    color: #fcf5e6;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.email_label {
+    font-size: 25px;
+    color: #fcf5e6;
+    font-weight: 600;
+}
+
+.email_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: 5%;
+}
+
+#profile_edit {
+    width: 90px;
+    height: 42px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #202a8b;
+    color: aliceblue;
+}
+>>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739

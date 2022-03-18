@@ -29,8 +29,8 @@ class Orders {
         return $error;
     }
 
-    public function is_current_key($key) {
-        $current_key = $this->table->where('user_id','=' ,'1')->pluck('download_key')->last();
+    public function is_valid_key($user_id, $key) {
+        $current_key = $this->table->where('user_id', '=', $user_id)->pluck('download_key')->last();
         if ($current_key == $key) {
             return true;
         } else {
@@ -39,12 +39,12 @@ class Orders {
     }
 
     public function get_count($user_id) {
-        $count = $this->table->where('user_id','=' ,$user_id)->pluck('download_count')->last();
+        $count = $this->table->where('user_id', '=', $user_id)->pluck('download_count')->last();
         return $count;
     }
 
     public function get_key($user_id) {
-        $key = $this->table->where('user_id','=' ,$user_id)->pluck('download_key')->last();
+        $key = $this->table->where('user_id', '=', $user_id)->pluck('download_key')->last();
         return $key;
     }
 }

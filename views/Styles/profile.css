@@ -113,3 +113,24 @@ form{
     align-content: center;
     align-items: center;
 }
+#submit {
+    width: 90px;
+    height: 42px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6c6c;
+    color: aliceblue;
+}
+
+#back_btn {
+    width: 90px;
+    height: 60px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #202a8b;
+    color: aliceblue;
+}

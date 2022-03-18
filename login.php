@@ -70,15 +70,7 @@ if (isset($_COOKIE["hashed_token"])) {
                 $url = "download.php?key=$current_key";
                 header("Location:$url");
             } else {
-<<<<<<< HEAD
                 $login_error = "Username or password are incorrect, please try again.";
-=======
-<<<<<<< HEAD
-                $login_error = "Username or password are incorrect, please try again.";
-=======
-                $login_error = "Email or password are incorrect, please try again.";
->>>>>>> c1f103f54068167282d080142119c5a5c918a7f8
->>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
             }
         }
     }

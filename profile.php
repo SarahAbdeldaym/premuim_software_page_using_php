@@ -49,7 +49,6 @@ if (isset($_POST["submit"])) {
     }
 
     $input_old_password = sha1($_POST["old_password"]);
-<<<<<<< HEAD
     if (isset($input_old_password) == $old_password) {
 
         if (isset($_POST["password"]) && isset($_POST["confirm_new_password"])) {
@@ -60,37 +59,8 @@ if (isset($_POST["submit"])) {
         if ($input_old_password != $old_password) {
             $update_password_errors = "you entered wrong password";
             echo ("done3");
-=======
-    if ($input_old_password == $old_password) {
-        if (isset($_POST["password"]) && isset($_POST["confirm_new_password"])) {
-            update_user_password($_SESSION["user_id"], $_POST["password"], $_POST["confirm_new_password"]);
->>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
         }
     }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
 require_once("views/profile.html");
-$profile_edit = new Users();
-$id = $_SESSION['user_id'];
-if(!empty($_POST['new_email']) && !empty($_POST['new_password']) && !empty($_POST['new_name'])){
-    $profile_edit->update_user_email($id);
-    $profile_edit->update_user_name($id);
-    $profile_edit->update_user_password($id);
-}
-else if (!empty($_POST['new_email'])) {
-    $profile_edit->update_user_email($id);
-}
-else if (!empty($_POST['new_password'])) {
-    $profile_edit->update_user_password($id);
-}
-else if (!empty($_POST['new_name'])) {
-    $profile_edit->update_user_name($id);
-}
-
-
-?>

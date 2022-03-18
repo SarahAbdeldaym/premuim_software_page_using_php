@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="views/Styles/profile.css" />
     <title>Profile</title>
-<<<<<<< HEAD
   </head>
 
   <body>
@@ -59,67 +57,12 @@
         <button type="submit" name="submit">edit</button>
       </form>
       <button onclick="window.location.href='login.php'">Back to download page</button>
-=======
-</head>
-
-<body>
-    <div class="card-info">
-        <img src="views/Resources/profile.png" alt="profile-img" style="z-index: 5" />
-        <!-- Email to be fixed -->
-        <form id="form" action="profile.php" method="POST">
-            <label>change Email</label><br />
-            <div>
-                <label for="old_email">current Email:</label>
-                <label name="old_email" type="text" id="old_email"><?php 
-            if(isset($_SESSION["user_id"])){
-            echo($user->show_user_email($_SESSION["user_id"]));
-          }
-           ?>
-          </label>
-                <br />
-            </div>
-            <div>
-                <label for="email ">new email</label>
-                <input name="email" type="text " id="new_email" placeholder="enter your new email" /><br />
-            </div>
-            <label>change password</label><br />
-            <div>
-                <label for="old_password">current password:</label>
-                <input name="old_password" type="password" id="old_password" placeholder="enter your password" /><br />
-            </div>
-            <div>
-                <label for="password">new password</label>
-                <input name="password" type="password" id="passwordNew" />
-            </div>
-            <div>
-                <label for="confirm_new_password">confirm new password</label>
-                <input name="confirm_new_password" type="password" id="passwordConfirm" />
-            </div>
-            <button type="submit" name="submit" id="submit">edit</button>
-        </form>
-        <button id="back_btn" onclick="window.location.href='login.php'">Back to download page</button>
->>>>>>> 77f907e48f0e5eed356ba288f164275c73e24739
     </div>
     <div class="counter">
-<<<<<<< HEAD
-        <div class="small-circle">
-            <p>
-                <?php echo($order->get_count($_SESSION["user_id"])-1)?>
-            </p>
-            <span> Download Count</span>
-        </div>
-=======
       <div class="small-circle">
         <p><?php echo($order->get_count($_SESSION["user_id"])-1)?></p>
         <span> Download Count</span>
       </div>
-      
-      <?php
-      foreach ($register_validation_errors_arr as $error) {
-      echo "<div class=\"register_validation_errors\" div> $error </div>\n";
-    };?>
->>>>>>> c1f103f54068167282d080142119c5a5c918a7f8
     </div>
-</body>
-
+  </body>
 </html>

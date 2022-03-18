@@ -1,0 +1,3 @@
+to download php qr code , you'll run this command in git bash and then add qr file.php
+
+composer require chillerlan/php-qrcode

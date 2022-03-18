@@ -49,18 +49,8 @@ if (isset($_POST["submit"])) {
     }
 
     $input_old_password = sha1($_POST["old_password"]);
-    if (isset($input_old_password) == $old_password) {
-
+   if ($input_old_password == $old_password) {
         if (isset($_POST["password"]) && isset($_POST["confirm_new_password"])) {
-            update_user_password($_SESSION["user_id"], sha1($_POST["password"]), sha1($_POST["confirm_new_password"]));
-            echo ($_POST["password"]);
-            echo ($_POST["confirm_new_password"]);
-        }
-        if ($input_old_password != $old_password) {
-            $update_password_errors = "you entered wrong password";
-            echo ("done3");
-        }
-    }
-}
+            update_user_password($_SESSION["user_id"], $_POST["password"], $_POST["confirm_new_password"]);
 
 require_once("views/profile.html");

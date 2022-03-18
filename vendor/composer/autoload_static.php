@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1520e5af70790367e2e104812c417dda
+class ComposerStaticInit6e9a1421059ddbba3babfa009a119a05
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -23,6 +23,11 @@ class ComposerStaticInit1520e5af70790367e2e104812c417dda
         'v' => 
         array (
             'voku\\' => 5,
+        ),
+        'c' => 
+        array (
+            'chillerlan\\Settings\\' => 20,
+            'chillerlan\\QRCode\\' => 18,
         ),
         'S' => 
         array (
@@ -63,6 +68,14 @@ class ComposerStaticInit1520e5af70790367e2e104812c417dda
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'chillerlan\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chillerlan/php-settings-container/src',
+        ),
+        'chillerlan\\QRCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -149,8 +162,9 @@ class ComposerStaticInit1520e5af70790367e2e104812c417dda
         'Orders' => __DIR__ . '/../..' . '/model/Orders.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'Tokens' => __DIR__ . '/../..' . '/model/Tokens.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'Users' => __DIR__ . '/../..' . '/model/Users.php',
+        'Users' => __DIR__ . '/../..' . '/model/users.php',
         'Utility' => __DIR__ . '/../..' . '/model/Utility.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
@@ -158,9 +172,9 @@ class ComposerStaticInit1520e5af70790367e2e104812c417dda
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1520e5af70790367e2e104812c417dda::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1520e5af70790367e2e104812c417dda::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1520e5af70790367e2e104812c417dda::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6e9a1421059ddbba3babfa009a119a05::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6e9a1421059ddbba3babfa009a119a05::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6e9a1421059ddbba3babfa009a119a05::$classMap;
 
         }, null, ClassLoader::class);
     }

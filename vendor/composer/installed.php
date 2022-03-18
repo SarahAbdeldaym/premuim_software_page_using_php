@@ -1,15 +1,33 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '5be857bb203c6721be6e27f2a0604ab62939b51c',
         'name' => 'vendor/project',
         'dev' => true,
     ),
     'versions' => array(
+        'chillerlan/php-qrcode' => array(
+            'pretty_version' => '4.3.3',
+            'version' => '4.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../chillerlan/php-qrcode',
+            'aliases' => array(),
+            'reference' => '6356b246948ac1025882b3f55e7c68ebd4515ae3',
+            'dev_requirement' => false,
+        ),
+        'chillerlan/php-settings-container' => array(
+            'pretty_version' => '2.1.3',
+            'version' => '2.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../chillerlan/php-settings-container',
+            'aliases' => array(),
+            'reference' => '125dd573b45ffc7cabecf385986a356ba2c6f602',
+            'dev_requirement' => false,
+        ),
         'doctrine/inflector' => array(
             'pretty_version' => '2.0.4',
             'version' => '2.0.4.0',
@@ -218,12 +236,12 @@
             ),
         ),
         'vendor/project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '5be857bb203c6721be6e27f2a0604ab62939b51c',
             'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(

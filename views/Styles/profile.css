@@ -1,18 +1,19 @@
-body{
+body {
     font-family: monospace;
     font-size: 24px;
-    margin-top: 0px; 
-    margin-bottom: 0px; 
-    margin-left: 0px; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
     margin-right: 0px;
     padding: 0;
-    background-color: #243545;
+    background-color: #42356d;
 }
-.card-info{
+
+.card-info {
     width: 27%;
     height: auto;
     display: inline-grid;
-    background-color: aliceblue;
+    background-color: #fcf5e6;
     justify-content: space-around;
     justify-items: center;
     border-radius: 24px;
@@ -22,55 +23,56 @@ body{
     left: 20%;
     top: 15%;
 }
-img{
+
+img {
     box-shadow: 4px 12px 24px darkgrey;
     border-radius: 113px;
     margin-bottom: 21px;
 }
-input{
-   
+
+input {
     border: none;
     /* border-bottom: 2px solid gray; */
     background-color: #f0f8ff;
 }
-input,#edit,#backtohome{
+
+input {
     width: 300px;
     height: 33px;
     text-align: center;
     border-radius: 3px;
-   
 }
-#edit,#backtohome{
+
+#edit {
     height: 40px;
-    background-color: cornflowerblue;
+    background-color: #42356d;
     margin-top: 22px;
     font-size: 20px;
     color: aliceblue;
     border: none;
 }
-#backtohome{
-    background-color: tomato;
-}
-.counter{
-      background-image: linear-gradient(#ff0000db,orange,#ffff00de,#32af3285,#0000ff08,indigo,#ee82ee6e);
-      position: relative;
-      left: 60%;
-      top: 80px;
-      width: 232px;
-      height: 237px;
-      border-radius: 120px;
+
+.counter {
+    background-image: linear-gradient(#ff0000db, orange, #ffff00de, #32af3285, #0000ff08, indigo, #ee82ee6e);
+    position: relative;
+    left: 60%;
+    top: 80px;
+    width: 232px;
+    height: 237px;
+    border-radius: 120px;
 }
 
-.small-circle{
+.small-circle {
     width: 205px;
     height: 205px;
     border-radius: 112px;
     position: relative;
     left: 6%;
     top: 16px;
-    background-color: #243545;
+    background-color: #42356d;
 }
-p{
+
+p {
     font-size: 83px;
     color: aliceblue;
     position: relative;
@@ -78,19 +80,36 @@ p{
     left: 36%;
     width: fit-content;
 }
-span{
+
+span {
     color: aliceblue;
     position: relative;
     top: 35%;
     left: 10%;
 }
 
-#edit_label{
+label {
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-#email{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#old_email {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 600;
+}
+
+.card-info input {
+    border: 0.3px solid gray;
+    width: 200px;
+    border-radius: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }

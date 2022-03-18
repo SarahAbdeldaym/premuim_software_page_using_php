@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,13 +9,10 @@
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to our software purchase page</h1>
-      <div class="imageback">
-        <div>
+        <header>
+          <img id="logo" src="views/Resources/Logo.png" alt="logo-img"/>
           <img id="register" src="views/Resources/register.png" alt="Image" />
-        </div>
-      </div>
-
+        </header>
       <div class="login-form">
         <form class="form-style" action="register.php" method="post">
           <h2>Register & Get it now!</h2>
@@ -53,12 +51,12 @@
           />
           <p>
             Already have an account?
-            <a href="#"><strong>Login instead</strong></a>
+            <a href="login.php"><strong>Login instead</strong></a>
           </p>
 
           <?php
             foreach ($register_validation_errors_arr as $error) {
-            echo "<div class=\"register_validation_errors\" div> $error </div>\n";
+            echo "<div class=\"register_validation_errors\"> $error </div>\n";
           };?>
         </form>
       </div>

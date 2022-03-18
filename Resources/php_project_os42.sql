@@ -26,7 +26,11 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `orders`
 --
+<<<<<<< HEAD
 use php_project_os42;
+=======
+
+>>>>>>> c1f103f54068167282d080142119c5a5c918a7f8
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `order_date` varchar(255) NOT NULL,

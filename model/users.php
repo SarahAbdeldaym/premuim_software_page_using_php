@@ -55,6 +55,7 @@ class Users {
         $cur_user = $this->table->where("user_id", $user_id)->get();
         return $cur_user[0]->user_email;
     }
+<<<<<<< HEAD
 
     public function show_user_email($user_id) {
         $email = $this->table->where("user_id", $user_id)->get();
@@ -73,4 +74,19 @@ class Users {
     }
 
 
+=======
+    
+    public function update_user_email($id){
+        $this->table->where($id, $_SESSION["user_id"])->update(['user_email' => $_POST['new_email']]);
+    }
+
+    public function update_user_name($id){
+        $this->table->where($id, $_SESSION["user_id"])->update(['user_name' => $_POST['new_name']]);
+    }
+
+    public function update_user_password($id){
+        $hashed_password=sha1($_POST['new_password']);
+        $this->table->where($id, $_SESSION["user_id"])->update(['password' => $hashed_password ]);
+    }
+>>>>>>> c1f103f54068167282d080142119c5a5c918a7f8
 }

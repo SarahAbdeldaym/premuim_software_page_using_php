@@ -45,12 +45,24 @@
         <button id="back_btn" onclick="window.location.href='login.php'">Back to download page</button>
     </div>
     <div class="counter">
+<<<<<<< HEAD
         <div class="small-circle">
             <p>
                 <?php echo($order->get_count($_SESSION["user_id"])-1)?>
             </p>
             <span> Download Count</span>
         </div>
+=======
+      <div class="small-circle">
+        <p>4</p>
+        <span> Download Count</span>
+      </div>
+      
+      <?php
+      foreach ($register_validation_errors_arr as $error) {
+      echo "<div class=\"register_validation_errors\" div> $error </div>\n";
+    };?>
+>>>>>>> c1f103f54068167282d080142119c5a5c918a7f8
     </div>
 </body>
 

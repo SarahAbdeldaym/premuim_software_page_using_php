@@ -98,8 +98,17 @@ span {
   margin-top: 20px;
 }
 
-#logo{
+#logo {
   position: absolute;
   top: 30px;
-  left:38%;
+  left: 38%;
+}
+
+.successful_register {
+  position: relative;
+  font-size: 23px;
+  color: green;
+  margin-left: 25px;
+  font-weight: 600;
+  top: 40px;
 }

@@ -11,9 +11,21 @@
 
   <body>
     <header>
+        <div class="email_area">
+            <div class="email_label"> Your Email</div>
+            <?php
+            echo "<div class=\"user_email\"> $current_user_email </div>";
+            ?>
+        </div>
         <img id="logo" src="views/Resources/Logo.png" alt="logo-img"/>
       <nav>
-        <button id="logout">Logout <i class="fa fa-sign-out"></i></button>
+          <!-- sending user to login page after destroying session and cookie -->
+        <form action="login.php" method="post">
+            <button id="logout" type="submit" name="logout_request" value="logout">
+                Logout
+                <i class="fa fa-sign-out"></i>
+            </button>
+        </form>
       </nav>
     </header>
     <div class="product">
@@ -23,7 +35,7 @@
         <a
           id="download_link"
           href="helpers/download_limit_handler.php"
-          <?php if ($download_order->get_count("1") <= 7) { ?>
+          <?php if ($download_order->get_count($current_user_id) <= 7) { ?>
             onclick = "window.open('http://localhost/project/helpers/download_initiator.php');"
           <?php } ?>
         >
@@ -31,7 +43,7 @@
         </a>
 
         <?php
-        echo "<div class=\"download_limit_error\" div> $download_limit_error </div>";
+        echo "<div class=\"download_limit_error\"> $download_limit_error </div>";
         ?>
 
       </div>

@@ -25,4 +25,17 @@ class Tokens {
             return false;
         }
     }
+
+    public function get_user_id_using_hashed_token($hashed_token){
+        $user = $this->table->where("hashed_token", $hashed_token)->get();
+        return $user[0]->user_id;
+    }
+
+    public function update_token ($user_id, $new_hashed_token) {
+        $this->table->where('user_id', "=", $user_id)->update(['hashed_token' => $new_hashed_token]);
+    }
+
+    public function delete_token ($hashed_token){
+        $this->table->where('hashed_token', '=', $hashed_token)->delete();
+    }
 }

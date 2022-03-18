@@ -1,9 +1,10 @@
 <?php
+session_start();
 require_once("../vendor/autoload.php");
 $download_order = new Orders;
 
 // Checking if user have reached limit and managed to access this file somehow
-if ($download_order->get_count("1") <= 7) { // ('$_POST['user_id']') to be added
+if ($download_order->get_count($_SESSION["user_id"]) <= 7) {
     $filename = '../Resources/XYZsoftware.zip';
 
     header('Pragma: public');

@@ -16,6 +16,12 @@
         </header>
 
         <div class="login-form">
+            <?php 
+             if($_SESSION["register_successful"] == true){
+                echo "<div class=\"successful_register\" div> You have registered successfully! </div>\n";
+              }
+              $_SESSION["register_successful"] = false;
+            ?>
             <form class="form-style" action="" method="post" enctype="multipart/form-data">
                 <h2>Login</h2>
                 <input
@@ -50,9 +56,9 @@
                 <input class="btn-login" type="submit" name="login" value="Login"><br><br>
 
                 <b>Not registered? </b> <a href="register.php">Create new account here.</a>
-                
+
                 <?php
-                    echo "<div class=\"login_validation\" div> $login_error </div>\n";
+                    echo "<div class=\"login_validation\"> $login_error </div>\n";
                 ?>
             </form>
         </div>

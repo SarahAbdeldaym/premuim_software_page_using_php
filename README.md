@@ -16,10 +16,8 @@ Any Purchased user can download the purchased item only up to 7 times then they 
 - chillerlan / php-qrcode
 
 ## requirment before using 
-please load sql file in phpMyAdmin mannually and install composer by using the following commands in your bash -->
-####composer update && composer install && composer dump-autoload
-
-
+- load sql file in phpMyAdmin mannually
+- Use composer to download all the used libraries.
 
 # team project
 - Sarah mohamed mohamed abdeldaym

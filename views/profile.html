@@ -15,11 +15,10 @@
       />
       <!-- Email to be fixed -->
       <form id="form" action="profile.php" method="POST">
-        <label>change Email</label><br />
         <div>
           <label for="old_email">current Email:</label>
           <label name="old_email" type="text" id="old_email"
-            >"<?php echo($user->show_user_email($_SESSION["user_id"])); ?>"
+            ><?php echo($user->show_user_email($_SESSION["user_id"])); ?>
           </label>
           <br />
         </div>
@@ -32,7 +31,7 @@
             placeholder="enter your new email"
           /><br />
         </div>
-        <label>change password</label><br />
+    <br />
         <div>
           <label for="old_password">current password:</label>
           <input
@@ -54,9 +53,16 @@
             id="passwordConfirm"
           />
         </div>
-        <button type="submit" name="submit" name="submit">edit</button>
+       <div id="buttons_div">
+        <button id="submit" type="submit" name="submit">edit</button>
+        <button id="back_btn" onclick="window.location.href='login.php'">Back</button>
+       </div>
+        
+        <?php
+        foreach ($update_errors_arr as $error) {
+        echo "<div class=\"update_errors\"> $error </div>\n";
+      };?>
       </form>
-      <button name="back_btn"onclick="window.location.href='login.php'">Back to download page</button>
     </div>
     <div class="counter">
       <div class="small-circle">

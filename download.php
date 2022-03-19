@@ -6,6 +6,8 @@ $download_order = new Orders;
 $download_user = new Users;
 $download_token = new Tokens;
 
+$project_folder_name = basename(__DIR__);
+
 if(isset($_SESSION["user_id"]) || isset($_COOKIE["hashed_token"])){
     // User variables
         // User id from token or session
@@ -37,6 +39,7 @@ if(isset($_SESSION["user_id"]) || isset($_COOKIE["hashed_token"])){
         } else {
             $download_limit_error = 'you have reached your maximum downloads limit from that account, please try a different account.';
         };
+        
         require_once("views/download.html");
     } else {
         require_once("views/error.html");

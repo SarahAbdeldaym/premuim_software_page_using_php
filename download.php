@@ -29,7 +29,7 @@ if(isset($_SESSION["user_id"]) || isset($_COOKIE["hashed_token"])){
                 $current_user_id = $_SESSION["user_id"];
             }
         $current_user_email = $download_user->get_email_using_userId($current_user_id);
-        $current_key = $_GET['key'];
+        $current_key = isset($_GET['key'])? $_GET['key']: "";
 
     // Checking if user and get key are valid
     if (isset($_GET['key']) && $download_order->is_valid_key($current_user_id, $current_key)) {

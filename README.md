@@ -32,6 +32,8 @@ Any Purchased user can download the purchased item only up to 7 times then they 
 ------------- 
 - load sql file in phpMyAdmin mannually
 - Use composer to download all the used libraries.
+- before using QR code please run the following command  -->   composer require chillerlan/php-qrcode
+
 
 # team project
 -------------------

@@ -36,7 +36,6 @@ class Users {
         }
     }
 
-    // check if user exists in db
     public function is_valid_user($email, $hashed_password) {
         $valid_email = $this->table->where('user_email', "=", $email)->exists();
         $valid_password = $this->table->where('password', "=", $hashed_password)->exists();
@@ -47,10 +46,31 @@ class Users {
         }
     }
 
-    // fn to get specific user id
     public function get_userId($email) {
         $cur_user = $this->table->where("user_email", $email)->get();
-
         return $cur_user[0]->user_id;
     }
+
+    public function get_email_using_userId($user_id) {
+        $cur_user = $this->table->where("user_id", $user_id)->get();
+        return $cur_user[0]->user_email;
+    }
+
+    public function show_user_email($user_id) {
+        $email = $this->table->where("user_id", $user_id)->get();
+        return $email[0]->user_email;
+    }
+    public function show_user_password($user_id) {
+        $password = $this->table->where("user_id", $user_id)->get();
+        return $password[0]->password;
+    }
+
+    public function updateUserEmail($new_user_email, $user_id) {
+        $this->table->where('user_id', "=", $user_id)->update(['user_email' => $new_user_email]);
+    }
+    public function updateUserPassword($user_new_password, $user_id) {
+        $this->table->where('user_id', "=", $user_id)->update(['password' => $user_new_password]);
+    }
+
+
 }

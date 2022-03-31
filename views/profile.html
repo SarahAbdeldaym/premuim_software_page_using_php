@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="views/Styles/profile.css" />
     <title>Profile</title>
   </head>
+
   <body>
     <div class="card-info">
       <img
@@ -13,40 +14,65 @@
         style="z-index: 5"
       />
       <!-- Email to be fixed -->
-      <input
-        id="email"
-        type="text"
-        placeholder="Email"
-        value="AsmaaFaried54@gmail.com"
-        name="email"
-        disabled
-      />
-      <label>Edit account info</label>
-      <div id="password_edit">
-        <label id="edit_label" for="pass">Change Password : </label>
-
-      </div>
-      <input
-        id="pass"
-        type="password"
-        placeholder="Password"
-        value="Asmaa123"
-        name="password"
-        disabled
-      />
-      <button id="edit">Edit my data</button>
-      <button id="backtohome">Back to download page</button>
+      <form id="form" action="profile.php" method="POST">
+        <div>
+          <label name="old_email" type="text" id="old_email"
+            ><?php echo($user->show_user_email($_SESSION["user_id"])); ?>
+          </label>
+          <br />
+        </div>
+        <div id="update_label">
+          <label>Update Email</label>
+        </div>
+        <div>
+          <label for="email ">New email</label>
+          <input
+            name="email"
+            type="text "
+            id="new_email"
+            placeholder="enter your new email"
+          /><br />
+        </div>
+        <div id="update_label">
+          <label>Update password</label>
+        </div>
+        <div>
+          <label for="old_password">Current password:</label>
+          <input
+            name="old_password"
+            type="password"
+            id="old_password"
+            placeholder="enter your password"
+          /><br />
+        </div>
+        <div>
+          <label for="password">New password</label>
+          <input name="password" type="password" id="passwordNew" />
+        </div>
+        <div>
+          <label for="confirm_new_password">Confirm new password</label>
+          <input
+            name="confirm_new_password"
+            type="password"
+            id="passwordConfirm"
+          />
+        </div>
+       <div id="buttons_div">
+        <button id="submit" type="submit" name="submit">edit</button>
+        <button id="back_btn" type="button" onclick="window.location.href='login.php'">Back</button>
+       </div>
+        
+        <?php
+        foreach ($update_errors_arr as $error) {
+        echo "<div class=\"update_errors\"> $error </div>\n";
+      };?>
+      </form>
     </div>
     <div class="counter">
       <div class="small-circle">
-        <p>4</p>
+        <p><?php echo($order->get_count($_SESSION["user_id"])-1)?></p>
         <span> Download Count</span>
       </div>
-      
-      <?php
-      foreach ($register_validation_errors_arr as $error) {
-      echo "<div class=\"register_validation_errors\" div> $error </div>\n";
-    };?>
     </div>
   </body>
 </html>

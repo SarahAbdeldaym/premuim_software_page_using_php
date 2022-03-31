@@ -16,11 +16,12 @@
         </header>
 
         <div class="login-form">
-            <?php 
-             if($_SESSION["register_successful"] == true){
+            <?php if(isset($_SESSION["register_successful"])){
+              if($_SESSION["register_successful"] == true){
                 echo "<div class=\"successful_register\" div> You have registered successfully! </div>\n";
               }
               $_SESSION["register_successful"] = false;
+            }
             ?>
             <form class="form-style" action="" method="post" enctype="multipart/form-data">
                 <h2>Login</h2>

@@ -1,11 +1,13 @@
 <?php
 
+// before using QR code please run the following command  -->   composer require chillerlan/php-qrcode
+
 declare(strict_types=1);
 
 require_once('vendor/autoload.php');
 
-use vendor\chillerlan\QRCode\QRCode as QRCode;
-use vendor\chillerlan\QRCode\QROptions as QROptions;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
 
 $options = new QROptions(
   [
@@ -15,7 +17,7 @@ $options = new QROptions(
   ]
 );
 
-$qrcode = (new QRCode($options))->render('/index.php');
+$qrcode = (new QRCode($options))->render('/register.php');
 ?>
 <!DOCTYPE html>
 <html>
